@@ -1,0 +1,29 @@
+#se define la clase alumno
+class Alumno:
+  # declaramos el metodo __init__
+  def __init__(self):
+    self.nombre=input("Ingrese el nombre: ")
+#se declara el metodo mostrar
+  def mostrar(self):
+    print("Nombre: ",self.nombre)
+#se declara la clase Estudiante
+#la clase Estudiante hereda los atributos de la clase Alumno y metodos 
+class Estudiante(Alumno):
+  # declaramos el metodo __init__
+  def __init__(self):
+    # llamamos al metodo init de la clase padre
+    # utilizamos la funcion super() para hacer referencia al padre
+    super().__init__()
+    self.nota=float(input("Ingrese su nota: "))
+  #se declara el metodo mostrar
+  def mostrar(self):   
+    print("Nota: ",self.nota)
+    
+  def definitiva(self):
+    if self.nota >=3:
+      print("aprobo con una calificacion de:", self.nota)
+    else:
+       print('lo siento no aprobaste')
+# bloque principal
+Estudiante=Estudiante()
+Estudiante.definitiva()
